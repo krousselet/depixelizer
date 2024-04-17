@@ -6,7 +6,7 @@ export const useGameStore = defineStore('game', {
     currentGuess: '',
     attempts: 0,
     maxAttempts: 5,
-    gameImages: [
+    gameImages: JSON.parse(localStorage.getItem('gameImages')) || [
       { url: require('@/assets/game/image1.svg'), id: 0, title: 'splinter cell', found: false },
       { url: require('@/assets/game/image2.svg'), id: 1, title: 'fallout 4', found: false },
       { url: require('@/assets/game/image3.svg'), id: 2, title: 'ori and the will of the wisps', found: false },
@@ -29,7 +29,11 @@ export const useGameStore = defineStore('game', {
       const image = this.gameImages.find(image => image.id === id);
       if (image) {
         image.found = true;
+        this.saveGameState();
       }
+    },
+    saveGameState() {
+      localStorage.setItem('gameImages', JSON.stringify(this.gameImages));
     },
     makeGuess(guess, imageId) {
       this.currentGuess = guess;

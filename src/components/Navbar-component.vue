@@ -10,7 +10,7 @@
                      <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav">
                             <li v-for="(page, pageIndex) in navbarStore.pages" :key="pageIndex" class="nav-item">
-                                <router-link :to="page.path">{{ page.label }}</router-link> |
+                                <router-link :to="page.path">{{ page.label }}</router-link>
                             </li>
                         </ul>
                     </div>
@@ -23,3 +23,14 @@
 import { useNavbarStore } from '@/stores/NavbarStore';
 const navbarStore = useNavbarStore();
 </script>
+<style lang="scss" scoped>
+@media (min-width: 991px) {
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+    }
+    
+}
+</style>

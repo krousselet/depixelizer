@@ -8,6 +8,10 @@ export const useNavbarStore = defineStore('navbar', {
                 label: 'home',
                 path: '/'
             },
+            {
+                label: 'regles',
+                path: '/how'
+            },
             // GAME PAGE
             {
                 label: 'jouer',

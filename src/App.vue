@@ -23,4 +23,21 @@ nav {
     }
   }
 }
+
+body {
+  
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  height: 100svh;
+}
+
+ul, li {
+  list-style: none;
+}
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
 </style>
