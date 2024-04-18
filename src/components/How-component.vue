@@ -45,7 +45,7 @@ main {
             overflow-x: hidden;
             li {
              margin: 10px auto;
-             transform: translateX(-550px);
+             transform: translateY(-550px);
             }
         }
         
@@ -55,6 +55,12 @@ main {
 @keyframes move-left {
     100% {
         transform: translateX(0);
+    }
+}
+
+@keyframes move-up {
+    100% {
+        transform: 0;
     }
 }
 

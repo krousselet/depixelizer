@@ -41,6 +41,8 @@ function navigateToGuess(id) {
 img {
   border-radius: 7px;
   transition: .5s ease-in-out;
+  width: 250px;
+  height: 250px;
   
   @media (min-width: 991px) {
     &:hover {
@@ -53,5 +55,10 @@ img {
       cursor: grabbing;
     }
   }
+}
+
+.swiper {
+  opacity: 0;
+  animation: appear .3s .5s ease-in-out forwards;
 }
 </style>

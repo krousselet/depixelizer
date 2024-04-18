@@ -6,14 +6,13 @@ export const useGameStore = defineStore('game', {
     currentGuess: '',
     attempts: 0,
     maxAttempts: 5,
-    gameImages: JSON.parse(localStorage.getItem('gameImages')) || [
-      { url: require('@/assets/game/image1.svg'), id: 0, title: 'splinter cell', found: false },
-      { url: require('@/assets/game/image2.svg'), id: 1, title: 'fallout 4', found: false },
-      { url: require('@/assets/game/image3.svg'), id: 2, title: 'ori and the will of the wisps', found: false },
-      { url: require('@/assets/game/image4.svg'), id: 3, title: 'far cry 4', found: false },
-      { url: require('@/assets/game/image5.svg'), id: 4, title: 'driver san francisco', found: false },
-      { url: require('@/assets/game/image6.svg'), id: 5, title: 'zelda ocarina of time', found: false },
-
+    gameImages: [
+      { url: require('@/assets/game/image1.webp'), id: 0, title: 'splinter cell', found: false },
+      { url: require('@/assets/game/image2.webp'), id: 1, title: 'fallout 4', found: false },
+      { url: require('@/assets/game/image3.webp'), id: 2, title: 'ori and the will of the wisps', found: false },
+      { url: require('@/assets/game/image4.webp'), id: 3, title: 'far cry 4', found: false },
+      { url: require('@/assets/game/image5.webp'), id: 4, title: 'driver san francisco', found: false },
+      { url: require('@/assets/game/image6.webp'), id: 5, title: 'zelda ocarina of time', found: false },
     ]
   }),
   getters: {
