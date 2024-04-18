@@ -23,6 +23,7 @@ main {
 
     #title-container {
         overflow-x: hidden;
+        margin: 50px auto;
 
         h2 {
             transform: translateX(-100%);

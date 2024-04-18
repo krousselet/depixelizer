@@ -4,11 +4,15 @@
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "VT323", monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: black;
+  font-size: 20px;
+  @media (min-width: 991px) {
+    font-size: 32px;
+  }
 }
 
 nav {
@@ -17,27 +21,34 @@ nav {
   a {
     font-weight: bold;
     color: #2c3e50;
+    text-decoration: none;
+    @media (min-width: 991px) {
+      letter-spacing: 3px;
+  }
 
     &.router-link-exact-active {
-      color: #42b983;
+      color: white;
+      text-transform: capitalize;
     }
   }
 }
 
 body {
   height: 100svh;
+  background: linear-gradient(#6C54FF, #00E0FF);
 }
 
 ul, li {
   list-style: none;
 }
 
-/* ROUTER TRANSITIONS */
+/* VIEW TRANSITIONS */
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease-in-out;
+  transition: all 300ms;
 }
-.fade-enter, .fade-leave-to {
+
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
   transform: translateY(60px);
 }

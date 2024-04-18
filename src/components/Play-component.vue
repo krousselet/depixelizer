@@ -40,5 +40,18 @@ function navigateToGuess(id) {
 
 img {
   border-radius: 7px;
+  transition: .5s ease-in-out;
+  
+  @media (min-width: 991px) {
+    &:hover {
+      scale: .9;
+      transition: .2s ease-in-out;
+      cursor: pointer;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
 }
 </style>

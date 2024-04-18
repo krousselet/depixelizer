@@ -19,6 +19,7 @@ main {
     opacity: 0;
     animation: appear .5s .5s ease-in-out forwards;
 #pixel-container {
+    perspective: 600px;
     height: 150px;
     width: 150px;
     margin: 50px auto 50px auto;
@@ -30,6 +31,7 @@ main {
     animation: primary-cube 5s .3s forwards;
     box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.192);
     position: relative;
+    transform-style: preserve-3d;
 
     &::after {
         content: '';
@@ -55,13 +57,13 @@ main {
         animation: tertiary-cube 5s .3s forwards;
         border-radius: 7px;
     }
-    }
+}
 
 
 #title-container {
     opacity: 0;
     animation: appear .5s 1s ease-in-out forwards;
-    margin: 25% auto 25% auto;
+    margin: 10% auto 10% auto;
 }
 
 #catch-container {
