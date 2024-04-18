@@ -10,7 +10,9 @@ export const useGameStore = defineStore('game', {
       { url: require('@/assets/game/image1.svg'), id: 0, title: 'splinter cell', found: false },
       { url: require('@/assets/game/image2.svg'), id: 1, title: 'fallout 4', found: false },
       { url: require('@/assets/game/image3.svg'), id: 2, title: 'ori and the will of the wisps', found: false },
-      { url: require('@/assets/game/image4.svg'), id: 2, title: 'far cry 4', found: false },
+      { url: require('@/assets/game/image4.svg'), id: 3, title: 'far cry 4', found: false },
+      { url: require('@/assets/game/image5.svg'), id: 4, title: 'driver san francisco', found: false },
+      { url: require('@/assets/game/image6.svg'), id: 5, title: 'zelda ocarina of time', found: false },
 
     ]
   }),
@@ -38,6 +40,9 @@ export const useGameStore = defineStore('game', {
     makeGuess(guess, imageId) {
       this.currentGuess = guess;
       this.attempts++;
+      if (this.attempts === 5) {
+        this.resetGame();
+      }
       const image = this.currentImage(imageId);
       if (guess.toLowerCase() === image.title.toLowerCase()) {
         return true;

@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">
@@ -25,16 +25,24 @@ nav {
 }
 
 body {
-  
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
   height: 100svh;
 }
 
 ul, li {
   list-style: none;
 }
+
+/* ROUTER TRANSITIONS */
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+/* KEYFRAMES */
 @keyframes appear {
   100% {
     opacity: 1;

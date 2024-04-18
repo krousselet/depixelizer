@@ -10,6 +10,12 @@ import HomeComponent from '@/components/Home-component.vue'
 
 export default {
   name: 'HomeView',
+  created() {
+    console.log("HomeView created");
+  },
+  mounted() {
+    console.log("HomeView mounted");
+  },
   components: {
     NavbarComponent,
     HomeComponent

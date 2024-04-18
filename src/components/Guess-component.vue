@@ -5,7 +5,12 @@
         <input type="text" v-model="guess" placeholder="Tenter votre chance ici...">
         <button type="submit" class="btn">Valider</button>
       </form>
-      <p>Essais restants: {{ gameStore.maxAttempts - gameStore.attempts }}</p>
+      <p>Essais restants:
+        <Transition name="fade" mode="out-in">
+          <span :key="'remaining-' + gameStore.attempts">{{ gameStore.maxAttempts - gameStore.attempts }}</span>
+        </Transition>
+      </p>
+    
       <button v-if="gameStore.attempts >= gameStore.maxAttempts" @click="resetGame">Reset Game</button>
     </div>
     <Snackbar :message="snackbarMessage" :duration="3000" v-if="showSnackbar" />
@@ -30,11 +35,9 @@
   const isCorrect = gameStore.makeGuess(guess.value, imageId);
   if (isCorrect) {
     gameStore.markAsFound(imageId);
-    // alert('Correct guess!');
     toast.success('Bien joué :) !');
     router.push('/play');
   } else {
-    // alert('Incorrect, try again!');
     toast.error('Dommage :(');
   }
   guess.value = '';
@@ -51,7 +54,7 @@ img {
 }
 
 form {
-
+  
   input {
     border: none;
     border-bottom: 1px solid black;
